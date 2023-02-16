@@ -14,5 +14,16 @@
         <module>gulimail-member</module>
         <module>gulimail-order</module>
         <module>gulimail-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>gulimail-common</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.atguigu.gulimail</groupId>
+            <artifactId>gulimail-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
