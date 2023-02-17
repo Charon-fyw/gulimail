@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 
  * @author fyw
  * @email sunlightcs@gmail.com
- * @date 2023-02-17 10:53:11
+ * @date 2023-02-17 11:07:52
  */
 @Mapper
 public interface SmsSeckillSkuRelationDao extends BaseMapper<SmsSeckillSkuRelationEntity> {

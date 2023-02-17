@@ -13,7 +13,7 @@ import lombok.Data;
  * 
  * @author fyw
  * @email sunlightcs@gmail.com
- * @date 2023-02-17 10:53:12
+ * @date 2023-02-17 11:07:53
  */
 @Data
 @TableName("sms_category_bounds")
