@@ -3,7 +3,9 @@ package com.atguigu.gulimail.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.atguigu.gulimail.member.feign.CouponFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +29,35 @@ import com.atguigu.common.utils.R;
 @RestController
 @RequestMapping("member/umsmember")
 public class UmsMemberController {
+    @Value("${member.user.name}")
+    private String name;
+
+    @Value("${member.user.age}")
+    private String age;
+
     @Autowired
     private UmsMemberService umsMemberService;
+
+    @Autowired
+    private CouponFeignService couponFeignService;
+
+    @RequestMapping("/coupon")
+    public R test(){
+        UmsMemberEntity member = new UmsMemberEntity();
+        member.setNickname("刘德华");
+        member.setCity("北京");
+        R coupons = couponFeignService.queryMemCoupons();
+        return R.ok()
+                .put("member", member)
+                .put("coupon", coupons.get("couponList"));
+    }
+
+    @RequestMapping("/test")
+    public R test2(){
+        return R.ok()
+                .put("name", name)
+                .put("age", age);
+    }
 
     /**
      * 列表
