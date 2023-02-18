@@ -3,6 +3,7 @@ package com.atguigu.gulimail.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.atguigu.gulimail.coupon.entity.SmsCouponEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +30,16 @@ import com.atguigu.common.utils.R;
 public class SmsCategoryBoundsController {
     @Autowired
     private SmsCategoryBoundsService smsCategoryBoundsService;
+
+    @RequestMapping("/merber/list")
+    public R queryMemCoupons(){
+        SmsCouponEntity coupon = new SmsCouponEntity();
+        coupon.setId(2L);
+        coupon.setCouponImg("test");
+        coupon.setCouponName("测试");
+        return R.ok("查询成功")
+                .put("couponList", Arrays.asList(coupon));
+    }
 
     /**
      * 列表
