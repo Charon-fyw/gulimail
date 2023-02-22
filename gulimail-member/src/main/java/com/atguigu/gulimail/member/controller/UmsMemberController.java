@@ -6,6 +6,7 @@ import java.util.Map;
 import com.atguigu.gulimail.member.feign.CouponFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,7 @@ import com.atguigu.common.utils.R;
  */
 @RestController
 @RequestMapping("member/umsmember")
+@RefreshScope
 public class UmsMemberController {
     @Value("${member.user.name}")
     private String name;
